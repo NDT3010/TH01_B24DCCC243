@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 3</title>
+</head>
+<style>
+    .doimau {
+        display: inline-block; 
+        width: fit-content; 
+        height: 20px;
+        padding: 0px 5px;
+        background-color: rgb(240, 240, 240);
+        margin: 5px;
+        box-sizing: border-box;
+        border-width: 2px;
+    }
+</style>
+<body>
+    <button class="doimau" > red </button>
+    <button class="doimau" > green </button>
+    <button class="doimau"> blue </button>
+    <button class="doimau"> yellow </button>
+    <div class="hopmau" style="display: block; width: 200px; height: 200px; background-color: black; margin-top: 20px;">
+    </div>
+    <script>
+        const buttons = document.querySelectorAll('.doimau');
+        const box = document.querySelector('.hopmau');
+        const colors = ['red', 'green', 'blue', 'yellow'];
+
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const color = colors[index];
+                box.style.backgroundColor = color;
+            });
+        });
+    </script>
+</body>
+</html>

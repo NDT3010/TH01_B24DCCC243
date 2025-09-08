@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 1</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .display-container {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    button {
+      font-size: 1.5rem;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="display-container">
+    <span>Giá trị hiện tại:</span>
+    <span class="display">0</span>
+  </div>
+  <div class="button-container">
+    <button id="increase">+</button>
+    <button id="decrease">-</button>
+  </div>
+
+  <script>
+    const display = document.querySelector('.display');
+    const increaseButton = document.getElementById('increase');
+    const decreaseButton = document.getElementById('decrease');
+    let count = 0;
+    function updateDisplay() {
+      display.textContent = count;
+    }
+    increaseButton.addEventListener('click', () => {
+      count++;
+      updateDisplay();
+    });
+    decreaseButton.addEventListener('click', () => {
+      count--;
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>
